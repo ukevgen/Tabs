@@ -20,7 +20,9 @@
         app:layout_constraintTop_toTopOf="parent"
         tools:text="FOR SALE" />
 
+
     <View
+        android:elevation="2dp"
         android:id="@+id/line_view"
         android:layout_width="0dp"
         android:layout_height="2dp"

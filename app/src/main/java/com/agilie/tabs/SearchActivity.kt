@@ -56,11 +56,11 @@ class SearchActivity : AppCompatActivity() {
 		tab_layout_search.addOnTabSelectedListener(tabSelectorListener)
 		//Add fragments
 		adapter?.apply {
-			addFragment(HistoryFragment(), "NEW")
-			addFragment(HistoryFragment(), "POPULAR")
-			addFragment(HistoryFragment(), "A-Z")
-			addFragment(HistoryFragment(), "RATING")
-			addFragment(HistoryFragment(), "PRICE")
+			addFragment(SerchTabFragmet(), "NEW")
+			addFragment(SerchTabFragmet(), "POPULAR")
+			addFragment(SerchTabFragmet(), "A-Z")
+			addFragment(SerchTabFragmet(), "RATING")
+			addFragment(SerchTabFragmet(), "PRICE")
 		}
 		view_pager_search.adapter = adapter
 		view_pager_search.offscreenPageLimit = 5
