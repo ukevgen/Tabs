@@ -1,6 +1,7 @@
 package com.agilie.tabs
 
 import android.content.Context
+import android.content.Intent
 import android.os.Bundle
 import android.support.constraint.ConstraintLayout
 import android.support.constraint.ConstraintSet
@@ -46,6 +47,7 @@ class MainActivity : AppCompatActivity() {
 		setContentView(R.layout.activity_main)
 		adapter = TabsFragmentAdapter(supportFragmentManager)
 		initTabs()
+		bt_search.setOnClickListener { startActivity(Intent(this, SearchActivity::class.java)) }
 	}
 
 	private fun initTabs() {
@@ -91,16 +93,16 @@ class MainActivity : AppCompatActivity() {
 			TabSelectedStatus.SELECTED -> {
 				showTabIndicator(layout)
 			}
-		 TabSelectedStatus.RESELECTED -> {
-			 when (visibleTabIndicator) {
+			TabSelectedStatus.RESELECTED -> {
+				when (visibleTabIndicator) {
 				/* true -> {
 					 hideTabIndicator(layout)
 				 }*/
-				 false -> {
-					 showTabIndicator(layout)
-				 }
-			 }
-		 }
+					false -> {
+						showTabIndicator(layout)
+					}
+				}
+			}
 			TabSelectedStatus.UNSELECTED -> {
 				hideTabIndicator(layout)
 			}
